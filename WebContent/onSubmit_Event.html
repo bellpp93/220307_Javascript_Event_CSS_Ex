@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>자바스크립트 onSubmit 이벤트 핸들러 예제</title>
+<script>
+	function jbSubmit(f) {
+		var pw1 = document.getElementById('pw1')
+		var pw2 = document.getElementById('pw2')
+		
+		if(pw1 != pw2) {
+			alert('패스워드 입력 값과 패스워드 확인 입력 값이 일치하는지 다시 한번 확인하세요!!')
+			f.password.focus()
+			return false
+		} else {
+			return true
+		}
+	}
+</script>
+</head>
+<body>
+	<h1>간단한 회원가입 폼 페이지</h1>
+	<form name="memberForm" method="POST" action="ok.html" onSubmit="return jbSubmit(this)">
+		<p>
+			이 름: <input name="username" type="text" placeholder="User name" required />
+		</p>
+		<p>
+			패스워드: <input name="password" type="password" placeholder="Password"
+							id="pw1" required />
+		</p>
+		<p>
+			패스워드확인: <input name="password-confirm" type="password" placeholder="Confirm Password"
+							id="pw2" required />
+		</p>
+		<p><input type="submit" value="등록"/></p>
+	</form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>onInput 이벤트 처리 예제</title>
+</head>
+<!-- onInput 이벤트는 사용자가 데이터를입력할 때 마다 바로바로 데이터를 확인할 때 사용하는 이벤트이다.
+	output 태그의 용도는 스크립트에 의해 수행된 계산의 결과는 사용자의 액션에 의한 결과를 나타날 때 사용-->
+<body>
+	<p>
+		output 태그와 onInput 이벤트 핸들러 처리
+		숫자 더하기
+	</p>
+	<form name="mtForm" onInput="result.value = parseInt(num1.value)+parseInt(num2.value)">
+		<input type="number" name="num1" value="0" /> +
+		<input type="number" name="num2" value="0" /> = <output name="result"></output>
+	</form>
+</body>
+</html>
