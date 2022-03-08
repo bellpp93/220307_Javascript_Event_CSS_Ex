@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>CSS 전후 문자선택자 예제02</title>
+<style>
+	ul.ulist {
+		list-style:none;
+		counter-reset:list_counter 0;  /* 카운터 0으로 초기화 */
+	}
+	a { color:black; text-decoration:none; }
+	li {
+		margin-bottom:2em;
+		margin-left:2em;
+		position:relative;
+	}
+	li::before {
+		content:counter(list_counter);
+		counter-increment:list_counter 1;  /* 1씩 늘어남 */
+		position:absolute;
+		left:-3em;
+		top:-0.5em;
+		border-radius:50%;
+		font-size:1em;
+		font-weight:bold;
+		width:2em;
+		height:2em;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		border:3px solid #b080cf;
+		background-color:#9060af;
+	}
+</style>
+</head>
+<body>
+	<h2>이벤트/멤버십</h2>
+	<ul class="ulist">
+		<li><a href="#">이벤트</a></li>
+		<li><a href="#">멤버십</a></li>
+		<li><a href="#">기획전</a></li>
+		<li><a href="#">엘라쇼</a></li>
+		<li><a href="#">카드혜택</a></li>
+	</ul>
+</body>
+</html>

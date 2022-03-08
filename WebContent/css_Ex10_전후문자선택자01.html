@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>CSS 전후 문자선택자(가상 요소선택자) 예제01</title>
+<style>
+	ul { list-style:none; }
+	
+	a { color:black; text-decoration:none; }
+	
+	ul li { position:relative;
+			display:inline-block; /* 중요 */
+			width:100px;
+			text-align:center;
+	}
+			
+			/* 구조선택자 + 전후문자선택자 */
+	ul li:nth-child(n+1):nth-child(-n+3)::after { /* li 태그를 첫번째부터 ~ 세번째까지를 선택 */
+			position:absolute;
+			content:"";
+			top:5px;
+			right:0px;
+			width:1px;
+			height:15px;
+			background-color:gray;
+	}
+</style>
+</head>
+<body>
+	<ul>
+		<li><a href="#">로그인</a></li>
+		<li><a href="#">회원가입</a></li>  <!-- href="memberForm.html" -->
+		<li><a href="#">마이페이지</a></li>
+		<li><a href="#">사이트맵</a></li>
+	</ul>
+</body>
+</html>
